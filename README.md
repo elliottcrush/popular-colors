@@ -11,8 +11,14 @@ popularColors.returnColorsAsJson( { outputData: 'json' } )
   .then((data) => console.log(data))
   .catch((err) => console.log(err))
 ```
-#### popularColors.returnColorsAsJson()
+#### popularColors.returnColorsAsJson( config )
  - Returns a promise to resolve a file full of lovely colors
+
+## Configuration
+
+#### config.pathToFile
+
+Yep you guessed it - String location to the file you want to scrape colors from
 
 ## Wishlist
 
