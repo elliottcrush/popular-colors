@@ -1,37 +1,13 @@
-const autoColours = {};
+const findColors = require('./lib/findColors');
 
-const fs = require('fs');
-const path = require('path');
-const readline = require('linebyline');
+const colors = {};
 
-autoColours.init = () => {
-  autoColours.grabColoursFromFile('node_modules/bootstrap/less/variables.less')
-  .then((result) => console.log(result))
-  .catch((err) => console.log(err))
-};
-
-autoColours.grabColoursFromFile = (colourFile) => {
-  const arrayOfColours = [];
+colors.returnColorsAsJson = (config) => {
   return new Promise((resolve, reject) => {
-    rl = readline(path.resolve(__dirname, colourFile));
-    rl.on('line', (line, lineCount, byteCount) => {
-      const foundColour = line.substr(line.indexOf('#'), 7);
-      if( foundColour.substr(0, 1) === '#' ) {
-        arrayOfColours.push({
-          'lineNumber': lineCount,
-          'colourFound': foundColour
-        })
-      }
-    })
-    .on('end', (something) => {
-      resolve(arrayOfColours);
-    })
-    .on('error', (e) => {
-      reject(e);
-    });
+    findColors.grabcolorsFromFile('../node_modules/bootstrap/less/variables.less')
+      .then((result) => resolve(result))
+      .catch((err) => reject(err))
   });
 };
 
-autoColours.init();
-
-module.exports = autoColours;
+module.exports = colors;
