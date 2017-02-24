@@ -2,6 +2,10 @@
 
 A completely pointless and arbitrary package which allows you to query a directory of files in order to receive a concise output of what hexadecimal colors that have been used.
 
+## How do I get the colors?
+
+```npm install popular-colors```
+
 ## Wishlist
 
  - Support for RGB as well as hexadecimal
