@@ -5,7 +5,7 @@ const path = require('path');
 const readline = require('linebyline');
 
 autoColours.init = () => {
-  autoColours.grabColoursFromFile('test.less')
+  autoColours.grabColoursFromFile('node_modules/bootstrap/less/variables.less')
   .then((result) => console.log(result))
   .catch((err) => console.log(err))
 };
