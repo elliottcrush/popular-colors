@@ -1,6 +1,6 @@
 {
   "name": "popular-colors",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A pointless plugin which generates a list of colours from any given stylesheet / pre-processor files",
   "main": "index.js",
   "scripts": {
